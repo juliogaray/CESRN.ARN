@@ -50,7 +50,7 @@ Esta práctica incluye:
 
 ## Paso 2: configuración de *Security Groups*
 1. **Crea un *Security Group* para la instancia pública:**
-   - Permite tráfico SSH (puerto 22) desde la IP pública del estudiante (tendrás que averiguarla y anotarla).
+   - Permite tráfico SSH (puerto 22) desde la IP pública que estés usandp (tendrás que averiguarla y anotarla; si estás en el IES, anota la IP pública visible desde el exterior, y luego usa el rango /24 en que esté dicha IP pública).
    - Permite tráfico ICMP (ping) desde cualquier IP.
    - Deniega cualquier otro tráfico.
 
@@ -85,9 +85,10 @@ Esta práctica incluye:
    - Desde la instancia pública, intenta conectarte a la privada usando SSH.
    - Prueba ping desde la instancia pública hacia la privada.
    - ¿Funcionan estas pruebas? ¿Es lógico?
+   - ¿Funcionaría un acceso HTTP desde la instancia pública a la privada? ¿Por qué?
 
 3. **Simula un ataque:**
-   - Desde una IP diferente (simulada o usando otra conexión), intenta acceder a la instancia pública por SSH y verifica que el tráfico es bloqueado por las reglas de NACL y *Security Group.*
+   - Desde una IP diferente (desde otra _subnet_ o usando otra conexión), intenta acceder a la instancia pública por SSH y verifica que el tráfico es bloqueado por las reglas de NACL y *Security Group.*
 
 ## Paso 5: analizar y solucionar problemas
 1. **Modifica las reglas de NACL:**
