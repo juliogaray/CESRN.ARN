@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1200"
+   height="750"
+   viewBox="0 0 1200 750"
+   version="1.1"
+   id="svg21"
+   sodipodi:docname="ARN-Práctica2.01b.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview21"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.0746667"
+     inkscape:cx="599.72084"
+     inkscape:cy="375"
+     inkscape:window-width="1920"
+     inkscape:window-height="1012"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg21" />
+  <style
+     id="style1">
+.title { font: bold 24px sans-serif; }
+.label { font: 15px sans-serif; }
+.small { font: 12px sans-serif; }
+.vpc { fill:#eef6ff; stroke:#2b6cb0; stroke-width:2; }
+.az { fill:#f7fbff; stroke:#7aa6d9; stroke-dasharray:6,4; }
+.subnet { fill:#ffffff; stroke:#444; stroke-width:1.5; }
+.firewall { fill:#ffe5e5; stroke:#c53030; stroke-width:2; }
+.instance { fill:#e6fffa; stroke:#2c7a7b; stroke-width:1.5; }
+.gateway { fill:#f0f0f0; stroke:#333; stroke-width:2; }
+.note { font:12px sans-serif; fill:#333; }
+.arrow { stroke:#000; stroke-width:2; marker-end:url(#arrow); }
+</style>
+  <defs
+     id="defs1">
+    <marker
+       id="arrow"
+       markerWidth="10"
+       markerHeight="10"
+       refX="10"
+       refY="3"
+       orient="auto">
+      <path
+         d="M0,0 L10,3 L0,6 Z"
+         fill="#000"
+         id="path1" />
+    </marker>
+  </defs>
+  <text
+     x="600"
+     y="35"
+     text-anchor="middle"
+     class="title"
+     id="text1">
+Laboratorio AWS Network Firewall – Arquitectura de red
+</text>
+  <!-- Internet -->
+  <rect
+     x="500"
+     y="60"
+     width="200"
+     height="60"
+     class="gateway"
+     id="rect1" />
+  <text
+     x="600"
+     y="95"
+     text-anchor="middle"
+     class="label"
+     id="text2">Internet</text>
+  <!-- VPC -->
+  <rect
+     x="80"
+     y="140"
+     width="1040"
+     height="560"
+     rx="20"
+     class="vpc"
+     id="rect2" />
+  <text
+     x="100"
+     y="170"
+     class="label"
+     id="text3">VPC 10.0.0.0/16</text>
+  <!-- AZ A -->
+  <rect
+     x="120"
+     y="200"
+     width="460"
+     height="450"
+     class="az"
+     id="rect3" />
+  <text
+     x="350"
+     y="220"
+     text-anchor="middle"
+     class="label"
+     id="text4">Availability Zone A</text>
+  <!-- AZ B -->
+  <rect
+     x="620"
+     y="200"
+     width="460"
+     height="450"
+     class="az"
+     id="rect4" />
+  <text
+     x="850"
+     y="220"
+     text-anchor="middle"
+     class="label"
+     id="text5">Availability Zone B</text>
+  <!-- Private Subnet -->
+  <rect
+     x="170"
+     y="420"
+     width="220"
+     height="140"
+     class="subnet"
+     id="rect5" />
+  <text
+     x="280"
+     y="440"
+     text-anchor="middle"
+     class="label"
+     id="text6">Private Subnet</text>
+  <text
+     x="280"
+     y="460"
+     text-anchor="middle"
+     class="small"
+     id="text7">10.0.2.0/24</text>
+  <!-- Instance -->
+  <rect
+     x="210"
+     y="480"
+     width="140"
+     height="45"
+     class="instance"
+     id="rect7" />
+  <text
+     x="280"
+     y="508"
+     text-anchor="middle"
+     class="small"
+     id="text8">EC2 Instance</text>
+  <!-- Route Table -->
+  <rect
+     x="210"
+     y="540"
+     width="140"
+     height="40"
+     class="subnet"
+     id="rect8" />
+  <text
+     x="280"
+     y="565"
+     text-anchor="middle"
+     class="small"
+     id="text9">Route Table</text>
+  <!-- Firewall Subnet A -->
+  <rect
+     x="260"
+     y="260"
+     width="200"
+     height="120"
+     class="subnet"
+     id="rect9" />
+  <text
+     x="360"
+     y="280"
+     text-anchor="middle"
+     class="label"
+     id="text10">Firewall Subnet</text>
+  <text
+     x="360"
+     y="300"
+     text-anchor="middle"
+     class="small"
+     id="text11">10.0.10.0/24</text>
+  <!-- Firewall endpoint A -->
+  <rect
+     x="300"
+     y="310"
+     width="120"
+     height="45"
+     class="firewall"
+     id="rect11" />
+  <text
+     x="360"
+     y="338"
+     text-anchor="middle"
+     class="small"
+     id="text12">Firewall Endpoint</text>
+  <!-- Firewall Subnet B -->
+  <rect
+     x="760"
+     y="260"
+     width="200"
+     height="120"
+     class="subnet"
+     id="rect12" />
+  <text
+     x="860"
+     y="280"
+     text-anchor="middle"
+     class="label"
+     id="text13">Firewall Subnet</text>
+  <text
+     x="860"
+     y="300"
+     text-anchor="middle"
+     class="small"
+     id="text14">10.0.11.0/24</text>
+  <!-- Firewall endpoint B -->
+  <rect
+     x="800"
+     y="310"
+     width="120"
+     height="45"
+     class="firewall"
+     id="rect14" />
+  <text
+     x="860"
+     y="338"
+     text-anchor="middle"
+     class="small"
+     id="text15">Firewall Endpoint</text>
+  <!-- Internet Gateway -->
+  <rect
+     x="950"
+     y="430"
+     width="120"
+     height="70"
+     class="gateway"
+     id="rect15" />
+  <text
+     x="1010"
+     y="468"
+     text-anchor="middle"
+     class="small"
+     id="text16">Internet</text>
+  <text
+     x="1010"
+     y="485"
+     text-anchor="middle"
+     class="small"
+     id="text17">Gateway</text>
+  <!-- Arrows -->
+  <line
+     x1="280"
+     y1="480"
+     x2="280"
+     y2="420"
+     class="arrow"
+     id="line17" />
+  <line
+     x1="280"
+     y1="420"
+     x2="360"
+     y2="355"
+     class="arrow"
+     id="line18" />
+  <line
+     x1="360"
+     y1="310"
+     x2="1010"
+     y2="430"
+     class="arrow"
+     id="line19" />
+  <line
+     x1="600"
+     y1="120"
+     x2="1010"
+     y2="430"
+     class="arrow"
+     id="line20" />
+  <!-- Notes -->
+  <text
+     x="600"
+     y="680"
+     text-anchor="middle"
+     class="note"
+     id="text20">
+Flujo típico: Instancia → Tabla de rutas → Firewall Endpoint → Internet Gateway → Internet
+</text>
+  <text
+     x="600"
+     y="705"
+     text-anchor="middle"
+     class="note"
+     id="text21">
+Security Groups filtran en la instancia | NACL filtran en la subnet | Network Firewall inspecciona el tráfico centralmente
+</text>
+</svg>

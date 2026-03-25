@@ -15,6 +15,7 @@ Deberás:
 - Documentar el proceso seguido, **incluyendo capturas de pantalla.**
 - Responder a estas preguntas:
   - ¿Qué sucede si no actualizas las tablas de encaminamiento para redirigir el tráfico al Firewall Endpoint?
+  - ¿A dónde debe dirigirse el tráfico filtrado que sale del cortafuegos, para que las subredes privadas tengan acceso a Internet?
   - ¿Por qué es importante tener subredes dedicadas para el cortafuegos?
   - ¿Cómo puedes optimizar la política del cortafuegos para evitar falsos positivos en los bloqueos?
   - Si implementaras *AWS Network Firewall* en un entorno de producción, ¿qué medidas adicionales tomarías para garantizar alta disponibilidad?
@@ -86,9 +87,9 @@ Esta práctica incluye:
 
 ## Paso 4: responde a las preguntas...
 
-... de la sección «Entrega» :wink:
+... de la sección «Entrega» 😉
 
-¡Y a la del paso 2.4! :wink: :wink:
+¡Y a la del paso 2.4! 😉 😉
 
 &nbsp;
 

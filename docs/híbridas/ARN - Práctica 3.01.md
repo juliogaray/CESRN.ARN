@@ -72,6 +72,7 @@ AWS Client VPN utiliza **certificados digitales** para autenticar tanto al servi
 - **Generar certificados para los clientes**:
   ```bash
   ./easyrsa build-client-full client1.domain.tld nopass
+  ```
 
 #### Paso 1.3: subir los certificados a AWS Certificate Manager (ACM)
 Una vez generados los certificados, debes subirlos al servicio de gestión de certificados de AWS:
@@ -95,7 +96,7 @@ Ahora, crea el *endpoint* de AWS Client VPN:
    - **VPC**: selecciona la VPC y las subredes donde quieres que el tráfico de los clientes llegue.
    - **Security Groups**: asocia un grupo de seguridad que permitirá el acceso a las instancias dentro de tu VPC.
 
-4. Haz clic en **Create Client VPN Endpoint**.
+4. Haz clic en el botón **Create Client VPN Endpoint**.
 
 5. **Configurar grupos de seguridad:**
    - Asegúrate de que los grupos de seguridad asociados a la VPC permitan el tráfico desde la IP del cliente VPN.
@@ -163,7 +164,7 @@ key /home/jgg/easy-rsa/pki/private/client1.domain.tld.key
 
 ## Paso 4: responde a las preguntas y realiza las tareas...
 
-... de la sección «Entrega» :wink:
+... de la sección «Entrega» 😉
 &nbsp;
 
 &nbsp;

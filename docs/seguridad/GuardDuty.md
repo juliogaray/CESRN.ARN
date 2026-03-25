@@ -34,7 +34,7 @@ Amazon GuardDuty opera en tres fases principales:
 ## 5. Interpretación de hallazgos
 Cada hallazgo de GuardDuty contiene:
 - **Tipo de amenaza**: acceso no autorizado, tráfico sospechoso, comportamiento anormal, etcétera;
-- **Severidad**: baja, media o alta;
+- **Severidad**: baja, media, alta o crítica;
 - **Origen del evento**: IP, cuenta, usuario o servicio implicado;
 - **Acciones recomendadas**: medidas sugeridas para mitigar el riesgo.
 

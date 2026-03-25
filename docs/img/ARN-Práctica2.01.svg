@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1100"
+   height="650"
+   viewBox="0 0 1100 650"
+   version="1.1"
+   id="svg16"
+   sodipodi:docname="ARN-Práctica2.01.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview16"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.85869249"
+     inkscape:cx="549.67291"
+     inkscape:cy="324.91259"
+     inkscape:window-width="1275"
+     inkscape:window-height="758"
+     inkscape:window-x="50"
+     inkscape:window-y="86"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg16" />
+  <style
+     id="style1">
+    .title { font: bold 22px sans-serif; }
+    .label { font: 14px sans-serif; }
+    .small { font: 12px sans-serif; }
+    .vpc { fill: #eef6ff; stroke: #2b6cb0; stroke-width: 2; }
+    .subnet { fill: #ffffff; stroke: #4a5568; stroke-width: 1.5; }
+    .firewall { fill: #ffe8e8; stroke: #c53030; stroke-width: 2; }
+    .instance { fill: #e6fffa; stroke: #2c7a7b; stroke-width: 1.5; }
+    .internet { fill: #f0f0f0; stroke: #555; stroke-width: 2; }
+    .arrow { stroke: #000; stroke-width: 1.8; marker-end: url(#arrow); }
+</style>
+  <defs
+     id="defs1">
+    <marker
+       id="arrow"
+       markerWidth="10"
+       markerHeight="10"
+       refX="10"
+       refY="3"
+       orient="auto">
+      <path
+         d="M0,0 L10,3 L0,6 Z"
+         fill="#000"
+         id="path1" />
+    </marker>
+  </defs>
+  <text
+     x="550"
+     y="30"
+     text-anchor="middle"
+     class="title"
+     id="text1">
+AWS Network Firewall – Esquema de laboratorio
+</text>
+  <!-- Internet -->
+  <rect
+     x="450"
+     y="60"
+     width="200"
+     height="50"
+     class="internet"
+     id="rect1" />
+  <text
+     x="550"
+     y="90"
+     text-anchor="middle"
+     class="label"
+     id="text2">Internet</text>
+  <!-- VPC -->
+  <rect
+     x="100"
+     y="140"
+     width="900"
+     height="450"
+     rx="20"
+     class="vpc"
+     id="rect2" />
+  <text
+     x="120"
+     y="170"
+     class="label"
+     id="text3">VPC (10.0.0.0/16)</text>
+  <!-- Public subnet -->
+  <rect
+     x="170"
+     y="210"
+     width="250"
+     height="130"
+     class="subnet"
+     id="rect3" />
+  <text
+     x="295"
+     y="230"
+     text-anchor="middle"
+     class="label"
+     id="text4">Public Subnet</text>
+  <text
+     x="295"
+     y="250"
+     text-anchor="middle"
+     class="small"
+     id="text5">10.0.1.0/24</text>
+  <!-- Private subnet -->
+  <rect
+     x="170"
+     y="390"
+     width="250"
+     height="130"
+     class="subnet"
+     id="rect5" />
+  <text
+     x="295"
+     y="410"
+     text-anchor="middle"
+     class="label"
+     id="text6">Private Subnet</text>
+  <text
+     x="295"
+     y="430"
+     text-anchor="middle"
+     class="small"
+     id="text7">10.0.2.0/24</text>
+  <!-- Instances -->
+  <rect
+     x="230"
+     y="450"
+     width="130"
+     height="40"
+     class="instance"
+     id="rect7" />
+  <text
+     x="295"
+     y="475"
+     text-anchor="middle"
+     class="small"
+     id="text8">EC2 Instance</text>
+  <!-- Firewall subnets -->
+  <rect
+     x="520"
+     y="210"
+     width="220"
+     height="110"
+     class="subnet"
+     id="rect8" />
+  <text
+     x="630"
+     y="230"
+     text-anchor="middle"
+     class="label"
+     id="text9">Firewall Subnet AZ-a</text>
+  <rect
+     x="520"
+     y="390"
+     width="220"
+     height="110"
+     class="subnet"
+     id="rect9" />
+  <text
+     x="630"
+     y="410"
+     text-anchor="middle"
+     class="label"
+     id="text10">Firewall Subnet AZ-b</text>
+  <!-- Firewall -->
+  <rect
+     x="560"
+     y="255"
+     width="140"
+     height="45"
+     class="firewall"
+     id="rect10" />
+  <text
+     x="630"
+     y="282"
+     text-anchor="middle"
+     class="small"
+     id="text11">Firewall Endpoint</text>
+  <rect
+     x="560"
+     y="430"
+     width="140"
+     height="45"
+     class="firewall"
+     id="rect11" />
+  <text
+     x="630"
+     y="457"
+     text-anchor="middle"
+     class="small"
+     id="text12">Firewall Endpoint</text>
+  <!-- IGW -->
+  <rect
+     x="820"
+     y="270"
+     width="140"
+     height="60"
+     class="internet"
+     id="rect12" />
+  <text
+     x="890"
+     y="305"
+     text-anchor="middle"
+     class="label"
+     id="text13">Internet Gateway</text>
+  <!-- Arrows -->
+  <line
+     x1="550"
+     y1="110"
+     x2="890"
+     y2="270"
+     class="arrow"
+     id="line13" />
+  <line
+     x1="295"
+     y1="450"
+     x2="560"
+     y2="455"
+     class="arrow"
+     id="line14" />
+  <line
+     x1="630"
+     y1="255"
+     x2="820"
+     y2="300"
+     class="arrow"
+     id="line15" />
+  <line
+     x1="630"
+     y1="455"
+     x2="820"
+     y2="300"
+     class="arrow"
+     id="line16" />
+  <!-- Notes -->
+  <text
+     x="550"
+     y="600"
+     text-anchor="middle"
+     class="small"
+     id="text16">
+El tráfico de las instancias se enruta primero al firewall endpoint y después al Internet Gateway.
+</text>
+</svg>
