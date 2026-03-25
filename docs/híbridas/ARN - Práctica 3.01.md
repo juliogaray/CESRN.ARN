@@ -94,6 +94,7 @@ Ahora, crea el *endpoint* de AWS Client VPN:
    - **Client CIDR**: define un rango IP para los clientes que se conectarán (por ejemplo, `10.0.252.0/22`).
    - **Authentication Options**: selecciona **Mutual authentication** y selecciona el ARN del certificado de la CA que subiste.
    - **VPC**: selecciona la VPC y las subredes donde quieres que el tráfico de los clientes llegue.
+   - **IP Address**: asegúrate de usar sólo **IPv4**.
    - **Security Groups**: asocia un grupo de seguridad que permitirá el acceso a las instancias dentro de tu VPC.
 
 4. Haz clic en el botón **Create Client VPN Endpoint**.
