@@ -27,13 +27,14 @@ Las **ubicaciones de borde *(Edge Locations)*** son [centros de procesamiento de
 Como puedes ver, existen similitudes entre estos dos últimos servicios (AWS Outposts y AWS Wavelength). Sin embargo son servicios bastante diferentes:
 
 
-| Característica      | AWS Outposts | AWS Wavelength |
+| Característica | AWS Outposts | AWS Wavelength |
 |--------------------|-------------|---------------|
 | **Propósito** | Extiende la infraestructura de AWS a centros de datos locales o instalaciones del cliente. | Permite ejecutar cargas de trabajo en redes 5G para reducir la latencia en aplicaciones móviles y en tiempo real. |
 | **Ubicación** | Instalaciones del cliente (data centers privados, fábricas, hospitales, etc.). | **Infraestructura de AWS dentro de redes 5G de operadores de telecomunicaciones.** |
 | **Casos de uso** | Aplicaciones con requisitos de baja latencia o regulaciones estrictas sobre la localización de datos. | Aplicaciones que requieren latencias ultrabajas, como juegos en la nube, realidad aumentada/virtual, IoT y transmisión de vídeo en vivo. |
 | **Conectividad** | Conectado a la región de AWS más cercana mediante [AWS Direct Connect o VPN](../híbridas/ConectividadparaVPCenAWS.html). | Se integra directamente con redes 5G para minimizar la latencia desde el dispositivo al servidor. |
 | **Servicios compatibles** | Soporta servicios de AWS como EC2, EBS, RDS y S3 en entornos locales. | Proporciona acceso a instancias EC2, contenedores y otros servicios en redes de telecomunicaciones 5G. |
+
 &nbsp;
 
 &nbsp;
