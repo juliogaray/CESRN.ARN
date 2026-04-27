@@ -28,8 +28,17 @@ No olvides indicar en tu documento todos los datos de cada elemento: nombre (dad
 1. Accede a la consola de AWS y ve a **S3**.  
 2. Crea un nuevo bucket con un nombre único (por ejemplo, `mi-bucket-cloudfront-lab`).  
 3. Sube un archivo HTML (`index.html`) y una imagen (`logo.png`).  
-4. Activa la opción **Hacer público el contenido** en la configuración del bucket.  
-5. Copia la URL del archivo `index.html` para comprobar que se puede acceder directamente.  
+4. Desmarca la casilla _Block all public access_ (tendrás que marcar luego la casilla del mensaje de aviso emergente).  
+5. Configura la política de acceso público del Bucket _(Bucket Policy):_  
+
+   1. En la misma pestaña de _Permissions,_ baja hasta _Bucket policy_ y haz clic en \[Edit\].
+   2. Haz clic en \[+ Add new statement\]. Eso añadirá código JSON básico que vamos a adaptar.
+   3. En el código JSON que ha aparecido, cambia `"Sid": "Statement1",` por `"Sid": "PublicReadGetObject",`
+   4. Cambia `"Principal": {},` por `"Principal": "*",`
+   5. Cambia `"Action": [],` por `"Action": "s3:GetObject",`
+   6. Cambia `"Resource": []` por `"Resource": "arn:aws:s3:::NOMBRE-DE-TU-BUCKET/*"` (cambia _NOMBRE-DE-TU-BUCKET_ por el nombre apropiado de tu _bucket)._ No te olvides los caracteres `/*` del final.
+   7. Guarda los cambios.
+6. Copia la URL del archivo `index.html` para comprobar que se puede acceder directamente.  
 
 ### Paso 2: configuración de un servidor EC2
 1. Lanza una nueva instancia EC2 con Amazon Linux 2.  
