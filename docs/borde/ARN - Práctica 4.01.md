@@ -35,8 +35,8 @@ No olvides indicar en tu documento todos los datos de cada elemento: nombre (dad
 1. Lanza una nueva instancia EC2 con Amazon Linux 2.  
 2. Conéctate a la instancia vía SSH y ejecuta:  
    ```bash
-   sudo yum update -y
-   sudo yum install -y httpd
+   sudo dnf update -y
+   sudo dnf install -y httpd
    sudo systemctl start httpd
    sudo systemctl enable httpd
    echo "Bienvenido a mi servidor web en EC2" | sudo tee /var/www/html/index.html
@@ -104,7 +104,7 @@ No olvides indicar en tu documento todos los datos de cada elemento: nombre (dad
    - `https://<cloudfront-url>/static/index.html` (debería cargar desde S3).  
    - `https://<cloudfront-url>/api/` (debería cargar desde EC2).  
 
-> **NOTA:** cuando definas el origen en el punto 1 de este paso, selecciona HTTP si tu máquina EC2 sólo sirve HTTP. Puedes seleccionar HTTPS si configuras la instancia para servir HTTPS-
+> **NOTA:** cuando definas el origen en el punto 1 de este paso, selecciona HTTP si tu máquina EC2 sólo sirve HTTP. Puedes seleccionar HTTPS si configuras la instancia para servir HTTPS
 
 ---
 
