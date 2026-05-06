@@ -29,7 +29,7 @@ No olvides indicar en tu documento todos los datos de cada elemento: nombre (dad
 2. Crea un nuevo bucket con un nombre único (por ejemplo, `mi-bucket-cloudfront-lab`).  
 3. Sube un archivo HTML (`index.html`) y una imagen (`logo.png`).  
 4. Desmarca la casilla _Block all public access_ (tendrás que marcar luego la casilla del mensaje de aviso emergente).  
-5. Configura la política de acceso público del Bucket _(Bucket Policy):_  
+5. Configura la política de acceso público del bucket _(Bucket Policy):_  
 
    1. En la misma pestaña de _Permissions,_ baja hasta _Bucket policy_ y haz clic en \[Edit\].
    2. Haz clic en \[+ Add new statement\]. Eso añadirá código JSON básico que vamos a adaptar.
@@ -59,11 +59,15 @@ No olvides indicar en tu documento todos los datos de cada elemento: nombre (dad
 
 ### Paso 3: configuración de una distribución de CloudFront
 1. Accede a **CloudFront** en la consola de AWS.  
-2. Crea una nueva distribución.  
-3. En el **origen**, selecciona el *bucket* de S3.  
-4. Activa la opción de **habilitar la compresión automática**.  
-5. En **Restricciones geográficas**, bloquea el acceso desde Suiza (ese peligroso país 😉).
-6. Crea la distribución y espera a que se propague.  
+2. Crea una nueva distribución.
+3. Selecciona el plan por defecto: _Pay as you go._  
+4. En el **origen**, selecciona el *bucket* de S3.  
+5. En _Settings,_ permite los protocoles HTTP y HTTPS, sin redirecciones.
+6. Activa la opción de **habilitar la compresión automática** (en _Cache policy_ selecciona `CachingOptimized`).  
+7. En **Restricciones geográficas**, bloquea el acceso desde Suiza (ese peligroso país 😉).
+8. En la pestaña _General_, asigna como _Default root object_ el archivo principal que hemos creado: `index.html`
+    (de esta forma podrás abrir la URL de la distribución sin necesidad de indicar el nombre del archivo).
+9. Crea la distribución y espera a que se propague.  
 
 ### Paso 4: comprobación del acceso al contenido desde ubicaciones de borde
 1. Copia la URL de la distribución de CloudFront.  
@@ -109,9 +113,12 @@ No olvides indicar en tu documento todos los datos de cada elemento: nombre (dad
 ### Paso 6: Agregar un segundo origen a CloudFront
 1. En **CloudFront**, edita la distribución y agrega un nuevo origen apuntando al nombnre de dominio del EC2.  
 2. Configura reglas en **Behaviors** para que las rutas `/static/*` se sirvan desde S3 y `/api/*` desde EC2.  
-3. Prueba la distribución con:  
+3. Crea una carpeta `static` en tu _bucket,_ porque Cloudfront le pasará la URL completa al origen de datos.
+4. Y, análogamente, una carpeta `api` en el directorio `/var/www/html/` de tu instancia EC2.
+5. Copia los archivos index.html a las carpetas recién creadas.
+6. Prueba la distribución con:  
    - `https://<cloudfront-url>/static/index.html` (debería cargar desde S3).  
-   - `https://<cloudfront-url>/api/` (debería cargar desde EC2).  
+   - `https://<cloudfront-url>/api/index.html` (debería cargar desde EC2).  
 
 > **NOTA:** cuando definas el origen en el punto 1 de este paso, selecciona HTTP si tu máquina EC2 sólo sirve HTTP. Puedes seleccionar HTTPS si configuras la instancia para servir HTTPS
 
@@ -130,8 +137,9 @@ Personalizar un mensaje en la web en función del país desde el que accede el u
 1. Ve a la consola de **AWS Lambda** y crea una nueva función.  
 2. Selecciona **Crear desde cero** y configura:  
    - Nombre: `CloudFrontGeoLambda`  
-   - Tiempo de ejecución: **Node.js 18.x**  
-   - Rol: **Crear un nuevo rol con permisos básicos de ejecución de Lambda**  
+   - _Runtime:_ **Node.js**  
+   - Rol (en _Additional settings)_: **Crear un nuevo rol con permisos básicos de ejecución de Lambda**  
+   - Haz clic en el botón para crear la función.
 3. Reemplaza el código por el siguiente:  
 
 ```javascript
@@ -162,7 +170,7 @@ exports.handler = async (event) => {
 };
 ```
 
-4. Guarda y publica la función.  
+4. Guarda y publica _(deploy)_ la función.  
 
 #### 2. Asocia Lambda@Edge a CloudFront
 1. En la consola de **CloudFront**, selecciona tu distribución.  
